@@ -1,0 +1,27 @@
+{
+  "name": "c-a-d-e",
+  "version": "1.0.0",
+  "description": "Community Application Development Environment - A collaborative development platform",
+  "main": "src/index.js",
+  "type": "module",
+  "bin": {
+    "cade": "./bin/cade.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "keywords": [
+    "development",
+    "environment",
+    "community",
+    "collaboration",
+    "framework"
+  ],
+  "author": "JOHNNYWHITEMIKE",
+  "license": "GPL-3.0",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
