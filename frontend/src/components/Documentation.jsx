@@ -18,14 +18,16 @@ function Documentation() {
         <section className="doc-section">
           <h3>What is C-A-D-E?</h3>
           <p>
-            C-A-D-E is an open-source platform that provides:
+            C-A-D-E (Community of Autonomous AI Agent Development Environment) is an open-source
+            orchestration platform — a complete DevOps + IDE + agent-hub for autonomous AI agents. It provides:
           </p>
           <ul>
-            <li>Visual agent builder with code editor</li>
-            <li>Support for multiple AI frameworks (LangChain, AutoGPT, CrewAI, etc.)</li>
-            <li>Project management for organizing AI applications</li>
-            <li>Agent execution environment</li>
-            <li>Community-driven agent library</li>
+            <li>🧠 <strong>AI Agent Frameworks:</strong> LangChain, AutoGPT, CrewAI, and more</li>
+            <li>⚙️ <strong>Developer Tools:</strong> FastAPI backend, React frontend, Monaco editor</li>
+            <li>🧰 <strong>Automation Layer:</strong> CLI + Dockerized environment</li>
+            <li>☁️ <strong>Remote Integration:</strong> GitHub syncing + API endpoints</li>
+            <li>🧩 <strong>Multi-Agent Orchestration:</strong> Coordinate multiple agents in projects</li>
+            <li>📊 <strong>Monitoring & Analytics:</strong> Dashboard for agent performance tracking</li>
           </ul>
         </section>
 
@@ -90,14 +92,24 @@ function Documentation() {
         <section className="doc-section">
           <h3>Working with Projects</h3>
           <p>
-            Projects help you organize multiple agents working together:
+            Projects enable multi-agent orchestration — coordinate multiple agents working together:
           </p>
           <ol>
-            <li>Create a new project from the Projects page</li>
-            <li>Add agents to your project</li>
-            <li>Configure agent interactions and workflows</li>
-            <li>Deploy your complete AI application</li>
+            <li><strong>Create a Project:</strong> Define your multi-agent application from the Projects page</li>
+            <li><strong>Add Agents:</strong> Select agents to work together in your project</li>
+            <li><strong>Configure Communication:</strong> Define how agents interact via REST/WebSocket</li>
+            <li><strong>Orchestrate Workflows:</strong> Set up agent coordination and task distribution</li>
+            <li><strong>Deploy:</strong> Launch your complete AI orchestration system</li>
           </ol>
+          <p>
+            <strong>Use Cases:</strong>
+          </p>
+          <ul>
+            <li>Multi-agent systems with specialized roles</li>
+            <li>Complex workflows requiring agent collaboration</li>
+            <li>Distributed task processing</li>
+            <li>Agent communication and data sharing</li>
+          </ul>
         </section>
 
         <section className="doc-section">

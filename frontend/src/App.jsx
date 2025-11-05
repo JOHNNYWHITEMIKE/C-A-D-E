@@ -16,7 +16,7 @@ function App() {
         <nav className="navbar">
           <div className="navbar-brand">
             <h1>C-A-D-E</h1>
-            <p className="subtitle">Community Application Development Environment</p>
+            <p className="subtitle">Autonomous Agent Studio + Infrastructure</p>
           </div>
           <div className="navbar-links">
             <a href="https://github.com/jim-schwoebel/awesome_ai_agents" target="_blank" rel="noopener noreferrer">

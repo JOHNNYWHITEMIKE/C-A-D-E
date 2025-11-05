@@ -54,15 +54,15 @@ function Dashboard() {
       <div className="welcome-section">
         <h3>Welcome to C-A-D-E</h3>
         <p>
-          The Community Application Development Environment is your platform for building,
-          testing, and deploying AI agents. Explore our features:
+          Your Autonomous Agent Studio + Infrastructure Layer. Build, test, deploy, and orchestrate
+          AI agents from a single unified environment. Explore our capabilities:
         </p>
         <ul className="feature-list">
-          <li><strong>Agent Builder:</strong> Create custom AI agents with visual tools</li>
-          <li><strong>Agent Library:</strong> Browse and use pre-built agents</li>
-          <li><strong>Project Management:</strong> Organize your AI applications</li>
-          <li><strong>Deploy & Execute:</strong> Run agents in a secure environment</li>
-          <li><strong>Documentation:</strong> Learn from comprehensive guides</li>
+          <li><strong>Agent Builder:</strong> Create autonomous agents with Monaco editor</li>
+          <li><strong>Multi-Agent Orchestration:</strong> Coordinate multiple agents in projects</li>
+          <li><strong>Framework Support:</strong> LangChain, AutoGPT, CrewAI, and more</li>
+          <li><strong>Deploy & Execute:</strong> Run agents in isolated Docker environments</li>
+          <li><strong>API Integration:</strong> RESTful endpoints for agent lifecycle management</li>
         </ul>
       </div>
 
