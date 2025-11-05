@@ -1,6 +1,9 @@
-version: '3.8'
+# C-A-D-E Docker Compose Configuration
+# Autonomous Agent Studio + Infrastructure Layer
+# Orchestration platform for building, testing, and deploying AI agents
 
 services:
+  # FastAPI Backend - Agent Orchestration API
   backend:
     build:
       context: ./backend
@@ -12,7 +15,10 @@ services:
     volumes:
       - ./backend:/app
     command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    networks:
+      - cade-network
 
+  # React Frontend - Agent Management UI
   frontend:
     build:
       context: ./frontend
@@ -25,3 +31,9 @@ services:
     command: npm run dev -- --host
     depends_on:
       - backend
+    networks:
+      - cade-network
+
+networks:
+  cade-network:
+    driver: bridge
