@@ -212,12 +212,77 @@ A collaborative development platform designed to streamline the application deve
 
 ## Features
 
-- 🚀 **Modular Architecture**: Extensible module system for different development needs
-- 🛠️ **Project Management**: Easy project creation and configuration
-- 🤝 **Collaboration-First**: Built with team development in mind
-- 📦 **Built-in Modules**: Web development, API building, testing, and more
-- 💻 **CLI & API**: Use via command line or as a library
-- 🎨 **Developer-Friendly**: Colored logging and intuitive interface
+### Modular Architecture
+```
+            ;;          
+            @@          
+          ;;@@;;        
+          ++@@++        
+          @@@@@@        
+        ;;@@@@@@;;      
+        ++@@@@@@++      
+        ;;;;@@;;;;      
+            ;;
+```
+Extensible module system for different development needs
+
+### Project Management
+```
+                ;;      
+            ::@@@@++    
+    ::;;++;;;;@@@@@@;;  
+        ;;;;::@@@@@@    
+        ;;;;  ::;;::    
+        ;;;;            
+        ;;;;
+```
+Easy project creation and configuration
+
+### Collaboration-First
+```
+    ;;@@;;      ;;@@;;  
+    ;;@@++;;;;;;++@@;;  
+    ;;@@;;      ;;@@;;
+```
+Built with team development in mind
+
+### Built-in Modules
+```
+      ::;;;;;;;;;;::    
+                        
+                        
+                        
+      ::;;;;;;;;;;::
+```
+Web development, API building, testing, and more
+
+### CLI & API
+```
+    ;;;;;;;;;;;;;;;;;;  
+    ;;              ;;  
+    ;;              ;;  
+    ;;;;::          ;;  
+    ;;;;::          ;;  
+    ;;      ;;;;::  ;;  
+    ;;              ;;  
+    ;;              ;;  
+    ;;;;;;;;;;;;;;;;;;
+```
+Use via command line or as a library
+
+### Developer-Friendly
+```
+            ;;          
+        ;;::  ::;;      
+      ;;::::  ::::;;    
+      ::@@@@  @@@@::    
+    ;;  ;;::  ::;;  ;;  
+      ::++++  ++++::    
+      ;;@@++  ++@@;;    
+        ;;::  ::;;      
+            ;;
+```
+Colored logging and intuitive interface
 
 ## Quick Start
 
