@@ -8,6 +8,7 @@ from pydantic import BaseModel
 from typing import List, Optional, Dict, Any
 import os
 from dotenv import load_dotenv
+from sample_data import get_sample_agents, get_sample_projects
 
 load_dotenv()
 
@@ -49,6 +50,21 @@ class Project(BaseModel):
 # In-memory storage (would be database in production)
 agents_db: Dict[str, Agent] = {}
 projects_db: Dict[str, Project] = {}
+
+# Load sample data on startup
+@app.on_event("startup")
+async def load_sample_data():
+    """Load sample agents and projects"""
+    # Load sample agents
+    for agent_data in get_sample_agents():
+        agents_db[agent_data["id"]] = Agent(**agent_data)
+    
+    # Load sample projects
+    for project_data in get_sample_projects():
+        projects_db[project_data["id"]] = Project(**project_data)
+    
+    print(f"✓ Loaded {len(agents_db)} sample agents")
+    print(f"✓ Loaded {len(projects_db)} sample projects")
 
 # Root endpoint
 @app.get("/")
