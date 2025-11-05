@@ -44,9 +44,13 @@ function AgentBuilder() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     
+    // Generate a more robust ID using timestamp + random component
+    // For production, consider using UUID library
+    const agentId = agentData.id || `agent_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
+    
     const agent = {
       ...agentData,
-      id: agentData.id || Date.now().toString()
+      id: agentId
     }
 
     try {

@@ -28,9 +28,13 @@ function Projects() {
   const handleCreateProject = async (e) => {
     e.preventDefault()
     
+    // Generate a more robust ID using timestamp + random component
+    // For production, consider using UUID library
+    const projectId = `project_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
+    
     const project = {
       ...newProject,
-      id: Date.now().toString()
+      id: projectId
     }
 
     try {

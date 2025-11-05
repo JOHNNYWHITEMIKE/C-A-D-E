@@ -48,13 +48,17 @@ class Project(BaseModel):
     agents: List[str] = []
 
 # In-memory storage (would be database in production)
+# TODO: Replace with persistent database (PostgreSQL/MongoDB) for production use
+# This in-memory storage is suitable for development and testing only
 agents_db: Dict[str, Agent] = {}
 projects_db: Dict[str, Project] = {}
 
 # Load sample data on startup
+# Note: @app.on_event is deprecated, but used here for simplicity
+# For production, consider using lifespan context manager
 @app.on_event("startup")
 async def load_sample_data():
-    """Load sample agents and projects"""
+    """Load sample agents and projects on application startup"""
     # Load sample agents
     for agent_data in get_sample_agents():
         agents_db[agent_data["id"]] = Agent(**agent_data)
