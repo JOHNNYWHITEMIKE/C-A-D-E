@@ -7,7 +7,7 @@ function Documentation() {
 
       <div className="doc-content">
         <section className="doc-section">
-          <h3>🚀 Getting Started with C-A-D-E</h3>
+          <h3>Getting Started with C-A-D-E</h3>
           <p>
             C-A-D-E (Community Application Development Environment) is a comprehensive platform
             for building, testing, and deploying AI agents. This guide will help you get started
@@ -16,7 +16,7 @@ function Documentation() {
         </section>
 
         <section className="doc-section">
-          <h3>📖 What is C-A-D-E?</h3>
+          <h3>What is C-A-D-E?</h3>
           <p>
             C-A-D-E is an open-source platform that provides:
           </p>
@@ -30,7 +30,7 @@ function Documentation() {
         </section>
 
         <section className="doc-section">
-          <h3>🔧 Creating Your First Agent</h3>
+          <h3>Creating Your First Agent</h3>
           <ol>
             <li>
               <strong>Navigate to Agent Builder:</strong> Click on "Agent Builder" in the sidebar
@@ -54,7 +54,7 @@ function Documentation() {
         </section>
 
         <section className="doc-section">
-          <h3>🤖 Agent Categories</h3>
+          <h3>Agent Categories</h3>
           <div className="categories-grid">
             <div className="category-item">
               <h4>Autonomous Agents</h4>
@@ -76,7 +76,7 @@ function Documentation() {
         </section>
 
         <section className="doc-section">
-          <h3>📚 AI Frameworks Supported</h3>
+          <h3>AI Frameworks Supported</h3>
           <ul>
             <li><strong>LangChain:</strong> Build applications with LLMs through composability</li>
             <li><strong>AutoGPT:</strong> Autonomous GPT-4 experiments</li>
@@ -88,7 +88,7 @@ function Documentation() {
         </section>
 
         <section className="doc-section">
-          <h3>📁 Working with Projects</h3>
+          <h3>Working with Projects</h3>
           <p>
             Projects help you organize multiple agents working together:
           </p>
@@ -101,7 +101,7 @@ function Documentation() {
         </section>
 
         <section className="doc-section">
-          <h3>🔗 Resources</h3>
+          <h3>Resources</h3>
           <ul>
             <li>
               <a href="https://github.com/jim-schwoebel/awesome_ai_agents" target="_blank" rel="noopener noreferrer">
@@ -122,7 +122,7 @@ function Documentation() {
         </section>
 
         <section className="doc-section">
-          <h3>💡 Best Practices</h3>
+          <h3>Best Practices</h3>
           <ul>
             <li>Start with simple agents and gradually increase complexity</li>
             <li>Test your agents thoroughly before deployment</li>
@@ -133,7 +133,7 @@ function Documentation() {
         </section>
 
         <section className="doc-section">
-          <h3>🤝 Contributing</h3>
+          <h3>Contributing</h3>
           <p>
             C-A-D-E is open-source and welcomes contributions! You can:
           </p>

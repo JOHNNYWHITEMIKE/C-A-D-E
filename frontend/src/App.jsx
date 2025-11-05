@@ -15,7 +15,7 @@ function App() {
       <div className="app">
         <nav className="navbar">
           <div className="navbar-brand">
-            <h1>🤖 C-A-D-E</h1>
+            <h1>C-A-D-E</h1>
             <p className="subtitle">Community Application Development Environment</p>
           </div>
           <div className="navbar-links">
@@ -35,11 +35,11 @@ function App() {
             </button>
             {sidebarOpen && (
               <nav className="sidebar-nav">
-                <Link to="/" className="nav-item">📊 Dashboard</Link>
-                <Link to="/agents" className="nav-item">🤖 Agents</Link>
-                <Link to="/builder" className="nav-item">🔧 Agent Builder</Link>
-                <Link to="/projects" className="nav-item">📁 Projects</Link>
-                <Link to="/docs" className="nav-item">📚 Documentation</Link>
+                <Link to="/" className="nav-item">Dashboard</Link>
+                <Link to="/agents" className="nav-item">Agents</Link>
+                <Link to="/builder" className="nav-item">Agent Builder</Link>
+                <Link to="/projects" className="nav-item">Projects</Link>
+                <Link to="/docs" className="nav-item">Documentation</Link>
               </nav>
             )}
           </aside>

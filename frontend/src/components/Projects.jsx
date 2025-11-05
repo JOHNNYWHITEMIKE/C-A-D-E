@@ -105,7 +105,7 @@ function Projects() {
               <h3>{project.name}</h3>
               <p>{project.description}</p>
               <div className="project-meta">
-                <span>🤖 {project.agents.length} agents</span>
+                <span>{project.agents.length} agents</span>
               </div>
               <div className="project-actions">
                 <button className="btn-primary">Open</button>
