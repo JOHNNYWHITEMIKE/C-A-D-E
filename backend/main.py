@@ -6,26 +6,12 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Optional, Dict, Any
+from contextlib import asynccontextmanager
 import os
 from dotenv import load_dotenv
 from sample_data import get_sample_agents, get_sample_projects
 
 load_dotenv()
-
-app = FastAPI(
-    title="C-A-D-E API",
-    description="Community Application Development Environment - AI Agent Platform",
-    version="1.0.0"
-)
-
-# CORS middleware
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 # Data models
 class Agent(BaseModel):
@@ -53,12 +39,9 @@ class Project(BaseModel):
 agents_db: Dict[str, Agent] = {}
 projects_db: Dict[str, Project] = {}
 
-# Load sample data on startup
-# Note: @app.on_event is deprecated, but used here for simplicity
-# For production, consider using lifespan context manager
-@app.on_event("startup")
-async def load_sample_data():
-    """Load sample agents and projects on application startup"""
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Load sample data on application startup"""
     # Load sample agents
     for agent_data in get_sample_agents():
         agents_db[agent_data["id"]] = Agent(**agent_data)
@@ -67,8 +50,26 @@ async def load_sample_data():
     for project_data in get_sample_projects():
         projects_db[project_data["id"]] = Project(**project_data)
     
-    print(f"✓ Loaded {len(agents_db)} sample agents")
-    print(f"✓ Loaded {len(projects_db)} sample projects")
+    print(f"Loaded {len(agents_db)} sample agents")
+    print(f"Loaded {len(projects_db)} sample projects")
+    yield
+    # Shutdown: cleanup resources like database connections, file handles, etc.
+
+app = FastAPI(
+    title="C-A-D-E API",
+    description="Community Application Development Environment - AI Agent Platform",
+    version="1.0.0",
+    lifespan=lifespan
+)
+
+# CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Root endpoint
 @app.get("/")

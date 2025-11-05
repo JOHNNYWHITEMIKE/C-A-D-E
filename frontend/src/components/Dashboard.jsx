@@ -33,19 +33,19 @@ function Dashboard() {
       
       <div className="stats-grid">
         <div className="stat-card">
-          <div className="stat-icon">🤖</div>
+          <div className="stat-icon">AI</div>
           <div className="stat-value">{stats.totalAgents}</div>
           <div className="stat-label">Total Agents</div>
         </div>
         
         <div className="stat-card">
-          <div className="stat-icon">📁</div>
+          <div className="stat-icon">PR</div>
           <div className="stat-value">{stats.totalProjects}</div>
           <div className="stat-label">Projects</div>
         </div>
         
         <div className="stat-card">
-          <div className="stat-icon">⚡</div>
+          <div className="stat-icon">AC</div>
           <div className="stat-value">{stats.activeAgents}</div>
           <div className="stat-label">Active Agents</div>
         </div>
@@ -58,11 +58,11 @@ function Dashboard() {
           testing, and deploying AI agents. Explore our features:
         </p>
         <ul className="feature-list">
-          <li>🔧 <strong>Agent Builder:</strong> Create custom AI agents with visual tools</li>
-          <li>🤖 <strong>Agent Library:</strong> Browse and use pre-built agents</li>
-          <li>📁 <strong>Project Management:</strong> Organize your AI applications</li>
-          <li>🚀 <strong>Deploy & Execute:</strong> Run agents in a secure environment</li>
-          <li>📚 <strong>Documentation:</strong> Learn from comprehensive guides</li>
+          <li><strong>Agent Builder:</strong> Create custom AI agents with visual tools</li>
+          <li><strong>Agent Library:</strong> Browse and use pre-built agents</li>
+          <li><strong>Project Management:</strong> Organize your AI applications</li>
+          <li><strong>Deploy & Execute:</strong> Run agents in a secure environment</li>
+          <li><strong>Documentation:</strong> Learn from comprehensive guides</li>
         </ul>
       </div>
 
