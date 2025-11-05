@@ -10,6 +10,15 @@ C-A-D-E is a comprehensive resource for application development, providing detai
 
 ## Documentation
 
+### ⚡ [Quick Reference Guide](./QUICK_REFERENCE.md)
+Fast overview with visual diagrams, decision matrices, and reading guides:
+- Documentation overview and structure
+- Team composition recommendations
+- Quick start workflow (week-by-week)
+- Decision matrix (human vs AI for each task)
+- Success metrics and technology recommendations
+- Common use cases and pro tips
+
 ### 📋 [Job Descriptions](./JOB_DESCRIPTIONS.md)
 Complete guide to all roles involved in application development, from design to development:
 - Product Management (CEO, Product Owner, Product Manager)
