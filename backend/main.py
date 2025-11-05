@@ -53,7 +53,7 @@ async def lifespan(app: FastAPI):
     print(f"Loaded {len(agents_db)} sample agents")
     print(f"Loaded {len(projects_db)} sample projects")
     yield
-    # Cleanup (if needed)
+    # Shutdown: cleanup resources like database connections, file handles, etc.
 
 app = FastAPI(
     title="C-A-D-E API",
