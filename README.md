@@ -11,7 +11,9 @@
 
 *Your orchestration platform for building, testing, deploying, and networking AI agents*
 
-</div>
+C-A-D-E (Community Application Development Environment) is an open-source, full-stack platform designed to empower developers to create, manage, and deploy AI agents with ease. C-A-D-E provides a visual interface and powerful tools for working with various AI frameworks and models. 
+
+## Features
 
 ## 🌟 What is C-A-D-E?
 
