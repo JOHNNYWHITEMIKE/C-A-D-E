@@ -13,7 +13,7 @@
 
 ## Overview
 
-C-A-D-E (Community Application Development Environment) is an open-source, full-stack platform designed to empower developers to create, manage, and deploy AI agents with ease. Inspired by the [awesome_ai_agents](https://github.com/jim-schwoebel/awesome_ai_agents) repository, C-A-D-E provides a visual interface and powerful tools for working with various AI frameworks and models.
+C-A-D-E (Community Application Development Environment) is an open-source, full-stack platform designed to empower developers to create, manage, and deploy AI agents with ease. C-A-D-E provides a visual interface and powerful tools for working with various AI frameworks and models. 
 
 ## Features
 
