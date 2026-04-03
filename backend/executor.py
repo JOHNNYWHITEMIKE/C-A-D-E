@@ -29,7 +29,9 @@ try:
     _docker_orch = DockerOrchestrator()
     DOCKER_AVAILABLE = True
     logger.info("Docker daemon connected – real execution enabled")
-except Exception as exc:  # noqa: BLE001
+except (ImportError, ModuleNotFoundError, Exception) as exc:  # noqa: BLE001
+    # Exception covers docker.errors.DockerException (daemon not running) as well as
+    # missing docker SDK; all produce a graceful simulated-execution fallback.
     _docker_orch = None  # type: ignore[assignment]
     DOCKER_AVAILABLE = False
     logger.warning("Docker not available (%s) – executions will be simulated", exc)
