@@ -5,6 +5,8 @@ function AgentList() {
   const [agents, setAgents] = useState([])
   const [filter, setFilter] = useState('all')
   const [searchTerm, setSearchTerm] = useState('')
+  const [executing, setExecuting] = useState(null)
+  const [execResult, setExecResult] = useState(null)
 
   useEffect(() => {
     fetchAgents()
@@ -17,6 +19,25 @@ function AgentList() {
       setAgents(data.agents || [])
     } catch (error) {
       console.error('Error fetching agents:', error)
+    }
+  }
+
+  const runAgent = async (agentId) => {
+    setExecuting(agentId)
+    setExecResult(null)
+    try {
+      const response = await fetch('http://localhost:8000/agents/execute', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ agent_id: agentId, input_data: {} }),
+      })
+      const data = await response.json()
+      setExecResult(data)
+    } catch (error) {
+      console.error('Error executing agent:', error)
+      setExecResult({ status: 'error', orchestrator_result: String(error) })
+    } finally {
+      setExecuting(null)
     }
   }
 
@@ -62,6 +83,22 @@ function AgentList() {
         </div>
       </div>
 
+      {execResult && (
+        <div className={`exec-result ${execResult.status === 'success' ? 'exec-success' : 'exec-error'}`}>
+          <div className="exec-result-header">
+            <strong>Orchestrator result</strong>
+            <button className="exec-close" onClick={() => setExecResult(null)}>✕</button>
+          </div>
+          <div className="exec-result-body">
+            <span className={`exec-status-badge ${execResult.status}`}>{execResult.status}</span>
+            <code>{execResult.orchestrator_result}</code>
+            {execResult.task_id && (
+              <div className="exec-task-id">Task ID: {execResult.task_id}</div>
+            )}
+          </div>
+        </div>
+      )}
+
       <div className="agents-grid">
         {filteredAgents.length === 0 ? (
           <div className="no-agents">
@@ -83,7 +120,13 @@ function AgentList() {
                 <span className="meta-item">💻 {agent.language}</span>
               </div>
               <div className="agent-actions">
-                <button className="btn-primary">Run</button>
+                <button
+                  className="btn-primary"
+                  onClick={() => runAgent(agent.id)}
+                  disabled={executing === agent.id}
+                >
+                  {executing === agent.id ? 'Running…' : 'Run'}
+                </button>
                 <button className="btn-secondary">View</button>
                 <button className="btn-secondary">Edit</button>
               </div>

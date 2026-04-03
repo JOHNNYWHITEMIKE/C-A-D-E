@@ -6,6 +6,7 @@ import AgentBuilder from './components/AgentBuilder'
 import AgentList from './components/AgentList'
 import Projects from './components/Projects'
 import Documentation from './components/Documentation'
+import Community from './components/Community'
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true)
@@ -39,6 +40,7 @@ function App() {
                 <Link to="/agents" className="nav-item">Agents</Link>
                 <Link to="/builder" className="nav-item">Agent Builder</Link>
                 <Link to="/projects" className="nav-item">Projects</Link>
+                <Link to="/community" className="nav-item">Community</Link>
                 <Link to="/docs" className="nav-item">Documentation</Link>
               </nav>
             )}
@@ -50,6 +52,7 @@ function App() {
               <Route path="/agents" element={<AgentList />} />
               <Route path="/builder" element={<AgentBuilder />} />
               <Route path="/projects" element={<Projects />} />
+              <Route path="/community" element={<Community />} />
               <Route path="/docs" element={<Documentation />} />
             </Routes>
           </main>
