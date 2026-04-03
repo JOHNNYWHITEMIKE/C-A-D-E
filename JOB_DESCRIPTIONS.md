@@ -372,6 +372,43 @@ Technical Writers create comprehensive documentation for users, developers, and 
 
 ---
 
+## 16. Command Layer Agent (LEE)
+
+### Overview
+LEE (Leadership Executive Engine) is a voice-based command layer agent that provides executive oversight of autonomous agent workforces.
+
+### Responsibilities
+- Provide voice-based system status announcements
+- Monitor and report on multi-agent workforce health
+- Route commands and requests to appropriate agents
+- Escalate critical issues requiring human intervention
+- Maintain real-time integration with system databases
+- Present metrics and status in cinematic, executive format
+- Ensure constitutional compliance across agent operations
+- Coordinate between core and extended agent teams
+
+### Key Skills
+- Voice AI and natural language processing
+- Real-time database integration (PostgreSQL, Prisma)
+- Multi-agent system orchestration
+- Executive communication and presentation
+- System monitoring and health checking
+- API integration (Vapi, webhooks)
+- Incident management and escalation
+- Compliance and audit oversight
+
+### Core Capabilities
+- Real-time status marquee presentations
+- Voice-activated command routing
+- Live metrics from cloud and payment databases
+- Agent health monitoring (9 core agents + 30+ extended)
+- Incident reporting and tracking
+- Consent request management
+- Payment confirmation oversight
+- Weekly health report generation
+
+---
+
 ## Team Structure Summary
 
 In a typical application development team, these roles work together in phases:

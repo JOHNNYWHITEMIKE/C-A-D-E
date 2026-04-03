@@ -1,0 +1,35 @@
+{
+  "name": "lee-command-layer-agent",
+  "version": "1.0.0",
+  "description": "LEE - Command Layer Agent for MyDataGPT with voice-based executive oversight",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "webhook": "node index.js",
+    "setup-lee": "node setup-lee.js",
+    "test": "node test-db-connections.js",
+    "prisma:generate": "npx prisma generate --schema=cloud-schema.prisma && npx prisma generate --schema=payments-schema.prisma",
+    "prisma:push": "npx prisma db push --schema=cloud-schema.prisma && npx prisma db push --schema=payments-schema.prisma"
+  },
+  "keywords": [
+    "ai-agent",
+    "voice-assistant",
+    "command-layer",
+    "vapi",
+    "mydatagpt"
+  ],
+  "author": "C-A-D-E Community",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@prisma/client": "^5.7.0",
+    "express": "^4.18.2",
+    "dotenv": "^16.3.1",
+    "axios": "^1.6.2"
+  },
+  "devDependencies": {
+    "prisma": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

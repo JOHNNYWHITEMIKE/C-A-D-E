@@ -1,0 +1,85 @@
+// This is your Prisma schema file for Cloud Database
+// Learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/cloud-client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("CLOUD_DATABASE_URL")
+}
+
+model VMInstance {
+  id            String   @id @default(uuid())
+  instanceId    String   @unique
+  status        String   // running, stopped, degraded, failed
+  region        String
+  type          String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  events        ContainerEvent[]
+  sessions      Session[]
+
+  @@map("vm_instances")
+}
+
+model ContainerEvent {
+  id          String      @id @default(uuid())
+  instanceId  String
+  instance    VMInstance  @relation(fields: [instanceId], references: [id])
+  eventType   String      // start, stop, restart, error, health_check
+  severity    String      // info, warning, error, critical
+  message     String
+  metadata    Json?
+  timestamp   DateTime    @default(now())
+
+  @@map("container_events")
+  @@index([instanceId])
+  @@index([severity])
+  @@index([timestamp])
+}
+
+model Session {
+  id          String      @id @default(uuid())
+  instanceId  String
+  instance    VMInstance  @relation(fields: [instanceId], references: [id])
+  userId      String?
+  status      String      // active, ended, expired
+  startedAt   DateTime    @default(now())
+  endedAt     DateTime?
+  metadata    Json?
+
+  @@map("sessions")
+  @@index([instanceId])
+  @@index([status])
+}
+
+model AgentStatus {
+  id              String   @id @default(uuid())
+  agentName       String   @unique // LEE, ALEX, NOVA, SAGE, ECHO, AXEL, RHEA, ZENO, IVY
+  status          String   // operational, degraded, failed
+  lastHealthCheck DateTime @default(now())
+  metrics         Json?
+  marqueeLine     String?
+  updatedAt       DateTime @updatedAt
+
+  @@map("agent_status")
+}
+
+model Incident {
+  id          String   @id @default(uuid())
+  severity    String   // low, medium, high, critical
+  title       String
+  description String
+  status      String   // open, acknowledged, resolved
+  assignedTo  String?
+  createdAt   DateTime @default(now())
+  resolvedAt  DateTime?
+  metadata    Json?
+
+  @@map("incidents")
+  @@index([severity])
+  @@index([status])
+}

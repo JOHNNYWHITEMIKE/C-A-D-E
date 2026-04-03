@@ -146,6 +146,38 @@ agents:
       memory: "1GB"
       cpu: "0.5"
 
+  - id: "lee-command-01"
+    name: "LEE - Command Layer Agent"
+    description: "Voice-based executive oversight agent for MyDataGPT workforce management"
+    version: "1.0.0"
+    docker_image: "ghcr.io/johnnywhitemike/agents/lee:latest"
+    skills:
+      - "Node.js"
+      - "Express"
+      - "Prisma"
+      - "PostgreSQL"
+      - "Voice AI"
+      - "Vapi Integration"
+      - "Real-time Monitoring"
+    categories:
+      - "management"
+      - "voice_ai"
+      - "monitoring"
+    capabilities:
+      - "Voice-based system status announcements"
+      - "Real-time database integration"
+      - "Multi-agent workforce oversight"
+      - "Cinematic status presentations"
+      - "Command routing and escalation"
+      - "Live metrics reporting"
+      - "Agent health monitoring"
+    performance_score: 0.98
+    hourly_cost: 50
+    estimated_capacity: 1  # Single command layer instance
+    resource_requirements:
+      memory: "512MB"
+      cpu: "0.5"
+
 # Agent repository configuration
 repository:
   url: "https://github.com/JOHNNYWHITEMIKE/list"

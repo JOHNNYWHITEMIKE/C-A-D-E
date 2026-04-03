@@ -1,0 +1,74 @@
+// This is your Prisma schema file for Payments Database
+// Learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/payments-client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("PAYMENTS_DATABASE_URL")
+}
+
+model Transaction {
+  id              String   @id @default(uuid())
+  sessionId       String
+  session         TransactionSession @relation(fields: [sessionId], references: [id])
+  amount          Decimal  @db.Decimal(10, 2)
+  currency        String   @default("USD")
+  status          String   // pending, completed, failed, refunded
+  paymentMethod   String   // card, bank_transfer, crypto
+  processedAt     DateTime?
+  createdAt       DateTime @default(now())
+  metadata        Json?
+  refunds         Refund[]
+
+  @@map("transactions")
+  @@index([sessionId])
+  @@index([status])
+}
+
+model TransactionSession {
+  id            String        @id @default(uuid())
+  userId        String?
+  status        String        // active, completed, abandoned
+  startedAt     DateTime      @default(now())
+  completedAt   DateTime?
+  totalAmount   Decimal?      @db.Decimal(10, 2)
+  transactions  Transaction[]
+
+  @@map("transaction_sessions")
+  @@index([status])
+}
+
+model Refund {
+  id              String      @id @default(uuid())
+  transactionId   String
+  transaction     Transaction @relation(fields: [transactionId], references: [id])
+  amount          Decimal     @db.Decimal(10, 2)
+  reason          String
+  status          String      // pending, approved, completed, rejected
+  requestedAt     DateTime    @default(now())
+  processedAt     DateTime?
+  processedBy     String?     // agent name or user id
+  metadata        Json?
+
+  @@map("refunds")
+  @@index([transactionId])
+  @@index([status])
+}
+
+model PaymentConsent {
+  id            String   @id @default(uuid())
+  userId        String
+  consentType   String   // recurring_payment, data_processing, refund_policy
+  status        String   // pending, granted, denied, revoked
+  requestedAt   DateTime @default(now())
+  respondedAt   DateTime?
+  metadata      Json?
+
+  @@map("payment_consents")
+  @@index([userId])
+  @@index([status])
+}
