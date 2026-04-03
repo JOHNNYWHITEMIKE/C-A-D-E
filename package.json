@@ -23,5 +23,8 @@
   "license": "GPL-3.0",
   "engines": {
     "node": ">=16.0.0"
-  }
+  },
+  "man": [
+    "./man/cade.1"
+  ]
 }

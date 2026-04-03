@@ -7,13 +7,43 @@
 
 import { CADECore } from '../src/core/cade-core.js';
 import { Logger } from '../src/utils/logger.js';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const logger = new Logger('CADE-CLI');
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+function readCliHelpFile() {
+  const helpFile = path.resolve(__dirname, '../docs/CLI_HELP.md');
+  if (!fs.existsSync(helpFile)) return null;
+  return fs.readFileSync(helpFile, 'utf8');
+}
+
+function showManSummary() {
+  console.log(`
+C.A.D.E. Manual
+
+Manual page source: man/cade.1
+Extended help: docs/CLI_HELP.md
+
+Tip: On Unix-like systems you can view the page with:
+  man ./man/cade.1
+`);
+}
 
 /**
  * Display help information
  */
 function showHelp() {
+  const helpFile = readCliHelpFile();
+  if (helpFile) {
+    console.log(helpFile);
+    return;
+  }
+
   console.log(`
 C.A.D.E. - Community Application Development Environment
 Version: 1.0.0
@@ -26,6 +56,7 @@ Commands:
   list              List available modules
   status            Show environment status
   help              Show this help message
+  man               Show manual summary
 
 Examples:
   cade init
@@ -88,6 +119,10 @@ async function cli() {
       case '--help':
       case '-h':
         showHelp();
+        break;
+
+      case 'man':
+        showManSummary();
         break;
 
       default:

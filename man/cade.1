@@ -1,0 +1,50 @@
+.TH CADE 1 "April 2026" "C.A.D.E. 1.0.0" "User Commands"
+.SH NAME
+cade \- Community Application Development Environment command-line interface
+.SH SYNOPSIS
+.B cade
+[\fICOMMAND\fR] [\fIOPTIONS\fR]
+.SH DESCRIPTION
+C.A.D.E. is a collaborative application development environment.
+The \fBcade\fR command initializes environments, creates projects,
+and reports module and environment status.
+.SH COMMANDS
+.TP
+.B init
+Initialize the C.A.D.E. environment.
+.TP
+.B create <name>
+Create a new project with the supplied name.
+.TP
+.B list
+List available modules.
+.TP
+.B status
+Show environment status.
+.TP
+.B help
+Show command help output.
+.TP
+.B man
+Show a short manual summary and where to find the full man page.
+.SH OPTIONS
+.TP
+.BR -h ", " --help
+Show help output.
+.SH EXAMPLES
+.B cade init
+.br
+.B cade create sci-fi-writer
+.br
+.B cade status
+.SH FILES
+.TP
+.B man/cade.1
+Project man page source.
+.TP
+.B docs/CLI_HELP.md
+Extended command help.
+.SH AUTHOR
+JOHNNYWHITEMIKE
+.SH LICENSE
+GPL-3.0
