@@ -1,0 +1,124 @@
+.exec-history { max-width: 1100px; margin: 0 auto; }
+
+.history-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+
+.status-bar { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+.status-pill {
+  border: 1px solid #0f3460;
+  border-radius: 20px;
+  padding: 0.2rem 0.75rem;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+.status-pill.total { border-color: #0f346088; color: #888; }
+
+.history-search {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.65rem 1rem;
+  background: #1a1a2e;
+  border: 1px solid #0f3460;
+  border-radius: 8px;
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+.loading-text { color: #666; font-style: italic; }
+
+.no-execs {
+  text-align: center;
+  padding: 3rem;
+  background: #1a1a2e;
+  border: 2px dashed #0f3460;
+  border-radius: 12px;
+  color: #888;
+}
+
+.exec-list { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.exec-item {
+  display: grid;
+  grid-template-columns: 12px 1fr auto auto 16px;
+  align-items: center;
+  gap: 0.75rem;
+  background: #1a1a2e;
+  border: 1px solid #0f3460;
+  border-radius: 10px;
+  padding: 0.85rem 1.1rem;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.exec-item:hover { border-color: #00d9ff44; }
+
+.ex-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.ex-main { display: flex; flex-direction: column; gap: 0.15rem; }
+.ex-agent { color: #e0e0e0; font-size: 0.95rem; font-weight: 500; }
+.ex-id { color: #555; font-size: 0.78rem; font-family: 'Courier New', monospace; }
+.ex-status { font-size: 0.82rem; text-transform: capitalize; }
+.ex-time { color: #555; font-size: 0.8rem; white-space: nowrap; }
+.ex-caret { color: #444; font-size: 1.1rem; }
+
+/* ── Log Drawer ─────────────────────────────────────────────────────────── */
+
+.log-drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.65); z-index: 1000; }
+
+.log-drawer {
+  position: fixed;
+  right: 0; top: 0; bottom: 0;
+  width: min(600px, 100vw);
+  background: #13182a;
+  border-left: 1px solid #0f3460;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #0f3460;
+  flex-shrink: 0;
+}
+.drawer-header h3 { color: #00d9ff; margin: 0 0 0.25rem; font-size: 1.1rem; }
+.drawer-id { color: #555; font-size: 0.78rem; font-family: 'Courier New', monospace; }
+
+.modal-close { background: none; border: none; color: #888; font-size: 1.3rem; cursor: pointer; padding: 0; min-width: unset; }
+.modal-close:hover { color: #e0e0e0; }
+
+.drawer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid #0f346044;
+  flex-shrink: 0;
+}
+.dm-badge {
+  border-radius: 12px;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.dm-item { color: #888; font-size: 0.8rem; display: flex; align-items: center; }
+
+.drawer-section { padding: 0.9rem 1.5rem; display: flex; flex-direction: column; gap: 0.4rem; overflow: hidden; flex: 1; min-height: 0; }
+.drawer-section h4 { color: #aaa; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0; }
+
+.log-pre {
+  background: #0a0f1e;
+  border: 1px solid #0f3460;
+  border-radius: 8px;
+  padding: 1rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.82rem;
+  color: #c0d8e0;
+  white-space: pre-wrap;
+  word-break: break-all;
+  overflow-y: auto;
+  flex: 1;
+  margin: 0;
+}

@@ -193,3 +193,10 @@ input:focus, textarea:focus, select:focus {
 ::-webkit-scrollbar-thumb:hover {
   background: #00d9ff;
 }
+
+.nav-active {
+  color: #00d9ff !important;
+  background: rgba(0, 217, 255, 0.1);
+  border-left: 3px solid #00d9ff;
+  padding-left: calc(1.5rem - 3px);
+}
