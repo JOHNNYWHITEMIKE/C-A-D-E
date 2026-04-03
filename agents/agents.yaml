@@ -1,5 +1,9 @@
 # AI Agents Manifest
-# Defines available AI agents for the freelance system
+# Defines available AI agents for the CADE platform.
+#
+# available: true  → agent has a runnable Docker image (local or remote)
+# local_path      → subdirectory under agents/ that contains a Dockerfile
+# local_image     → image tag to use when building/running locally
 
 agents:
   - id: "web-scraper-01"
@@ -7,6 +11,9 @@ agents:
     description: "Autonomous agent for extracting data from websites"
     version: "1.0.0"
     docker_image: "ghcr.io/johnnywhitemike/agents/web-scraper:latest"
+    local_image: "cade-web-scraper:latest"
+    local_path: "web-scraper"
+    available: true
     skills:
       - "Python"
       - "Selenium"
@@ -25,16 +32,19 @@ agents:
       - "Dynamic content extraction"
     performance_score: 0.92
     hourly_cost: 20
-    estimated_capacity: 5  # concurrent tasks
+    estimated_capacity: 5
     resource_requirements:
       memory: "1GB"
       cpu: "0.5"
-    
+
   - id: "python-web-dev-01"
     name: "Python Web Developer"
     description: "Full-stack Python web development agent"
     version: "1.0.0"
     docker_image: "ghcr.io/johnnywhitemike/agents/python-web:latest"
+    local_image: ""
+    local_path: ""
+    available: false
     skills:
       - "Python"
       - "Django"
@@ -59,12 +69,15 @@ agents:
     resource_requirements:
       memory: "2GB"
       cpu: "1.0"
-  
+
   - id: "data-analyst-01"
     name: "Data Analysis Expert"
     description: "Data analysis and visualization specialist"
     version: "1.0.0"
     docker_image: "ghcr.io/johnnywhitemike/agents/data-analyst:latest"
+    local_image: ""
+    local_path: ""
+    available: false
     skills:
       - "Python"
       - "Pandas"
@@ -89,12 +102,15 @@ agents:
     resource_requirements:
       memory: "2GB"
       cpu: "1.0"
-  
+
   - id: "react-dev-01"
     name: "React Frontend Developer"
     description: "Modern React frontend development"
     version: "1.0.0"
     docker_image: "ghcr.io/johnnywhitemike/agents/react-dev:latest"
+    local_image: ""
+    local_path: ""
+    available: false
     skills:
       - "React"
       - "JavaScript"
@@ -123,6 +139,9 @@ agents:
     description: "CI/CD, Docker, and cloud infrastructure"
     version: "1.0.0"
     docker_image: "ghcr.io/johnnywhitemike/agents/devops:latest"
+    local_image: ""
+    local_path: ""
+    available: false
     skills:
       - "Docker"
       - "Kubernetes"
@@ -150,12 +169,12 @@ agents:
 repository:
   url: "https://github.com/JOHNNYWHITEMIKE/list"
   registry: "ghcr.io/johnnywhitemike/agents"
-  pull_policy: "IfNotPresent"  # Always, IfNotPresent, Never
-  
+  pull_policy: "IfNotPresent"
+
 # Global agent settings
 settings:
   max_concurrent_agents: 10
-  default_timeout: 3600  # 1 hour
-  health_check_interval: 60  # seconds
+  default_timeout: 3600
+  health_check_interval: 60
   auto_cleanup: true
   log_retention_days: 7
